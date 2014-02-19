@@ -94,8 +94,8 @@ class Index implements SearchableInterface
 
         $response = $this->request($path, Request::GET);
         $data = $response->getData();
-        if (isset($data[$this->getName()]['mappings'])) {
-            return $data[$this->getName()]['mappings'];
+        if (isset($data[$this->getName()])) {
+            return $data[$this->getName()];
         }
 
         return array();
